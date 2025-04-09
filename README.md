@@ -2,14 +2,6 @@
 
 Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déployée localement avec **Docker**, sans `docker-compose`.
 
-## 📦 Structure du projet
-
-```
-mern-docker-app/# MERN Docker App
-```
-
-Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déployée localement avec **Docker**, sans `docker-compose`.
-
 ## 🚀 Lancer le projet avec Docker
 
 ### 1. Créer un réseau Docker
