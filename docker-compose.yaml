@@ -1,0 +1,45 @@
+version: "3.8"
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongo_container
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: pass123
+    networks:
+      - mern_network
+
+  backend:
+    build:
+      context: ./backend
+    container_name: api_container
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongodb
+    networks:
+      - mern_network
+
+  frontend:
+    build:
+      context: ./front
+    container_name: frontend_container
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+    networks:
+      - mern_network
+
+volumes:
+  mongo_data:
+
+networks:
+  mern_network:
+    driver: bridge
