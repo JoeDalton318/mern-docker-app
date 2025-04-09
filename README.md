@@ -2,26 +2,6 @@
 
 Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déployée localement avec **Docker**, sans `docker-compose`.
 
-## 📦 Structure du projet
-
-```
-mern-docker-app/# MERN Docker App
-
-Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déployée localement avec **Docker**, sans `docker-compose`.
-
-## 📦 Structure du projet
-
-```
-mern-docker-app/
-├── backend/           # API Express + Node.js
-│   └── Dockerfile
-├── frontend/          # Application React (Vite ou CRA)
-│   └── Dockerfile
-├── nginx/             # (Optionnel) config personnalisée
-│   └── nginx.conf
-└── README.md
-```
-
 ## 🚀 Lancer le projet avec Docker
 
 ### 1. Créer un réseau Docker
@@ -39,8 +19,8 @@ docker run -d \
   --name mongo_container \
   --network mern_network \
   -v mongo_data:/data/db \
-  -e MONGO_INITDB_ROOT_USERNAME=admin \
-  -e MONGO_INITDB_ROOT_PASSWORD=pass123 \
+  -e MONGO_INITDB_ROOT_USERNAME=Gylls \
+  -e MONGO_INITDB_ROOT_PASSWORD=JoeDalton318 \
   mongo
 ```
 
@@ -64,7 +44,7 @@ docker build -t mern_frontend .
 docker run -d \
   --name frontend_container \
   --network mern_network \
-  -p 3000:80 \
+  -p 8080:80 \
   mern_frontend
 ```
 
@@ -100,7 +80,7 @@ Ne stockez pas vos mots de passe en dur ! Utilisez des variables d’environneme
 
 ---
 
-## 💡 Alternative avec Docker Compose
+## 💡 Relance avec Docker Compose
 
 Une autre manière plus simple de lancer tout le projet consiste à utiliser `docker-compose` :
 
