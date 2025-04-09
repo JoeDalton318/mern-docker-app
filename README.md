@@ -6,6 +6,7 @@ Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déploy
 
 ```
 mern-docker-app/# MERN Docker App
+```
 
 Ce projet est une application MERN (MongoDB, Express.js, React, Node.js) déployée localement avec **Docker**, sans `docker-compose`.
 
